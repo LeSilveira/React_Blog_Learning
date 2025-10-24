@@ -1,4 +1,4 @@
-📖 # React-Blog Learning
+# React-Blog Learning 📖
 
 💡 A simple repository with code developed to learn some basic concepts of React, express and react-router library in a fullstack blog-themed application.  
   
