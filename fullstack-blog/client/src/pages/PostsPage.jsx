@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function PostsPage() {
   const [posts, setPosts] = useState([]);
-
+  const {id} = useParams();
+  
+  console.log(id);
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -17,7 +20,7 @@ function PostsPage() {
     }
 
     fetchPosts();
-  }, []);
+  }, id ? [id] : []);
 
   return <ul>
     {posts.map((post) => (

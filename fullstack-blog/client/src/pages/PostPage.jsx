@@ -11,18 +11,22 @@ function PostPage() {
             try {
                 const res = await fetch(`http://localhost:3001/api/posts/${id}`);
                 const data = await res.json();
+                console.log(`http://localhost:3001/api/posts/${id}`);
                 setPost(data);
-                
                 document.title = `Post ${String(data.id)} - ${data.title}`;
             }
             catch (error) {
-                console.log(error);
+                console.error('Error occourred while getting post data: ', error);
             }
         })()
     }, [id])
 
     if (!post) {
         return <h1>Loading post...</h1>;
+    }
+
+    if (Object.keys(post).length === 0 ) {
+        return <h1>Post not found</h1>;
     }
 
     return (
