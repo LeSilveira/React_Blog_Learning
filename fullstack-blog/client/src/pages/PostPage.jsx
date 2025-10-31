@@ -11,7 +11,7 @@ function PostPage() {
             try {
                 const res = await fetch(`http://localhost:3001/api/posts/${id}`);
                 const data = await res.json();
-                console.log(`http://localhost:3001/api/posts/${id}`);
+
                 setPost(data);
                 document.title = `Post ${String(data.id)} - ${data.title}`;
             }
@@ -34,7 +34,6 @@ function PostPage() {
             <div>
                 <p>Just a post with the {post.id} id and title {post.title}</p>
             </div>
-            <PostsPage />
         </>
     )
 }

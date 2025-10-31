@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import HeaderDefault from './components/HeaderDefault'
 import FooterDefault from './components/FooterDefault'
 import PostPage from './pages/PostPage'
+import CreatePostPage from './pages/CreatePostPage';
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
 
         {/* Route for the posts */}
         <Route path="/posts/:id" element={<PostPage />} />
+
+        {/* Route for post creation page */}
+        <Route path="/posts/create" element={<CreatePostPage />} />
 
       </Routes>
       <FooterDefault />

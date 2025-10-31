@@ -6,7 +6,6 @@ function PostsPage() {
   const [posts, setPosts] = useState([]);
   const {id} = useParams();
   
-  console.log(id);
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -18,9 +17,9 @@ function PostsPage() {
         console.log(error);
       }
     }
-
+    
     fetchPosts();
-  }, id ? [id] : []);
+  }, []);
 
   return <ul>
     {posts.map((post) => (
